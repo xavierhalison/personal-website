@@ -1,34 +1,44 @@
-import { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-import Layout from "components/layout";
-import MainSection from "components/sections/main";
-import CardsSection from "components/sections/cards";
-import FeaturesSection from "components/sections/features";
-import DropdownTextsSection from "components/sections/dropdownTexts";
-import FooterSection from "components/sections/footer";
+import { GlobalContext as Context } from "global/context";
 
-import { LandingContext as Context } from "global/context";
+import Layout from "components/Layout/Layout";
 
-import { scrollTo } from "helpers/navigation";
-import Animations from "components/animations";
+import MainSection from "pages/main";
+import CardsSection from "pages/cards";
+import FeaturesSection from "pages/features";
+import DropdownTextsSection from "pages/dropdownTexts";
+
+
+const stateModel = {
+  pages: [
+    { name: "Home", id: "home" },
+    { name: "my Skills", id: "features" },
+    { name: "my XP", id: "cards" },
+    { name: "more", id: "dropdowns" },
+  ],
+  activePage: "features"
+}
 
 function App() {
-  const [page, setPage] = useState("inicio");
-  const [globalState, setGlobalState] = useState({});
+  const [state, setState] = useState({ ...stateModel });
+  const { activePage } = state;
 
-  useEffect(() => {
-    scrollTo(page);
-  }, [page]);
 
   return (
-    <Context.Provider value={{ page, setPage, globalState, setGlobalState }}>
-      <Animations />
+    <Context.Provider value={{ state, setState }}>
       <Layout>
-        <MainSection />
-        <FeaturesSection />
-        <CardsSection />
-        <DropdownTextsSection />
-        <FooterSection />
+        {
+          activePage === "home"
+            ? <MainSection />
+            : activePage === "features"
+              ? <FeaturesSection />
+              : activePage === "cards"
+                ? <CardsSection />
+                : activePage === "dropdowns"
+                  ? <DropdownTextsSection />
+                  : <></>
+        }
       </Layout>
     </Context.Provider>
   );

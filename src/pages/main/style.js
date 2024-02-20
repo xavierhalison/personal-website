@@ -1,29 +1,16 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-
-  > * {
-    text-align: center;
-  }
-
-  > h4 {
-    @media screen and (min-width: 1025px) {
-      max-width: 400px;
-    }
-  }
-`;
-
 export const MainPageContainer = styled.div`
+  padding: 30px 20px 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100vh;
+
+  @media screen and (min-width: 1025px) {
+    padding: 60px 40px 0;
+  }
 
   > * {
     text-align: center;
@@ -44,7 +31,7 @@ export const Illustration = styled.img`
   margin: 20px 0;
 
   @media screen and (min-width: 1025px) {
-    max-width: 250px;
+    max-width: 150px;
   }
 `;
 

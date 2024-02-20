@@ -10,9 +10,11 @@ import { Illustration, ButtonWrapper, SocialMediaWrapper, MainPageContainer } fr
 import illUstration1 from "assets/images/illustration1.jpg";
 
 import { Linkedin, GitHub } from "react-feather";
+import { I18nContext } from "context/i18n";
 
 function MainSection() {
   const { state, setState } = useContext(Context);
+  const { i18n } = useContext(I18nContext);
 
   const handleButtonClick = (id) => {
     setState({ ...state, activePage: id });
@@ -21,21 +23,20 @@ function MainSection() {
   return (
     <MainPageContainer id="inicio">
       <Title>
-        Hi there!
-        <br /> I'm Halison
+        {i18n.MAIN_PAGE.GREETING}
+        <br /> {i18n.MAIN_PAGE.INTRODUCTION}
       </Title>
       <Illustration src={illUstration1} alt="" />
       <Subtitle>
-        I'm Frontend Software Engineer, Open Source Enthusiast, Web Crafter,
-        Javascript Lover.
+        {i18n.MAIN_PAGE.SUBTITLE}
       </Subtitle>
       <ButtonWrapper>
-        <Button className="primary" onClick={() => handleButtonClick("features")}>My Skills</Button>
-        <Button className="secondary" onClick={() => handleButtonClick("cards")}>My XP</Button>
+        <Button className="primary" onClick={() => handleButtonClick("features")}>{i18n.MAIN_PAGE.BUTTON_1}</Button>
+        <Button className="secondary" onClick={() => handleButtonClick("cards")}>{i18n.MAIN_PAGE.BUTTON_2}</Button>
       </ButtonWrapper>
       <SocialMediaWrapper>
-        <Linkedin className="social-media-icon" width={50} height={50} />
-        <GitHub className="social-media-icon" width={50} height={50} />
+        <Linkedin className="social-media-icon" width={25} height={25} />
+        <GitHub className="social-media-icon" width={25} height={25} />
       </SocialMediaWrapper>
     </MainPageContainer>
   );

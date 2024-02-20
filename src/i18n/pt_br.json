@@ -1,0 +1,91 @@
+{
+    "MENU": [
+        {
+            "ID": "home",
+            "NAME": "Página Inicial"
+        },
+        {
+            "ID": "features",
+            "NAME": "Habilidades"
+        },
+        {
+            "ID": "cards",
+            "NAME": "Experiência"
+        },
+        {
+            "ID": "dropdown",
+            "NAME": "Mais"
+        }
+    ],
+    "MAIN_PAGE": {
+        "GREETING": "Olá!",
+        "INTRODUCTION": "O meu nome é Halison",
+        "SUBTITLE": "Sou desenvolvedor frontend, entusiasta do Open Source e amante do Javascript.",
+        "BUTTON_1": "Habilidades",
+        "BUTTON_2": "Experiência"
+    },
+    "SKILLS": {
+        "TITLE": "Essas são algumas das minhas habilidades",
+        "LIST": [
+            {
+                "ID": 1,
+                "TEXT": "Javascript ES6+ e React"
+            },
+            {
+                "ID": 2,
+                "TEXT": "Building complex layouts with CSS3 and HTML5"
+            },
+            {
+                "ID": 3,
+                "TEXT": "Modern frameworks such as Next.js and Libs such as Styled Components"
+            },
+            {
+                "ID": 4,
+                "TEXT": "Typescript"
+            }
+        ],
+        "BUTTON": "Experiência"
+    },
+    "XP": {
+        "TITLE": "Minha experiência com desenvolvimento Frontend",
+        "LIST": [
+            {
+                "TITLE": "Ioasys",
+                "TEXT": "Ut non nisi dolore aute excepteur nostrud deserunt excepteur aliquip et. Enim est excepteur duis fugiat consectetur labore in laborum culpa anim nisi cupidatat.",
+                "ID": 1
+            },
+            {
+                "TITLE": "Sambatech",
+                "TEXT": "Ut non nisi dolore aute excepteur nostrud deserunt excepteur aliquip et. Enim est excepteur duis fugiat consectetur labore in laborum culpa anim nisi cupidatat.",
+                "ID": 2
+            },
+            {
+                "TITLE": "Symplicity",
+                "TEXT": "Ut non nisi dolore aute excepteur nostrud deserunt excepteur aliquip et. Enim est excepteur duis fugiat consectetur labore in laborum culpa anim nisi cupidatat.",
+                "ID": 3
+            }
+        ],
+        "BUTTON": "Mais"
+    },
+    "MORE": {
+        "TITLE": "Teste",
+        "LIST": [
+            {
+                "TITLE": "Item 1",
+                "TEXT": "Ut non nisi dolore aute excepteur nostrud deserunt excepteur aliquip et. Enim est excepteur duis fugiat consectetur labore in laborum culpa anim nisi cupidatat. Culpa do reprehenderit cupidatat Lorem proident deserunt id. Aute ut aliqua tempor ad voluptate Lorem nulla aliquip culpa sit ex pariatur. Elit minim Lorem occaecat esse eu id proident ut adipisicing ad. Velit dolor consectetur nulla do.",
+                "ID": 1
+            },
+            {
+                "TITLE": "Item 2",
+                "TEXT": "Ut non nisi dolore aute excepteur nostrud deserunt excepteur aliquip et. Enim est excepteur duis fugiat consectetur labore in laborum culpa anim nisi cupidatat. Culpa do reprehenderit cupidatat Lorem proident deserunt id. Aute ut aliqua tempor ad voluptate Lorem nulla aliquip culpa sit ex pariatur. Elit minim Lorem occaecat esse eu id proident ut adipisicing ad. Velit dolor consectetur nulla do.",
+                "ID": 2
+            },
+            {
+                "TITLE": "Item 3",
+                "TEXT": "Ut non nisi dolore aute excepteur nostrud deserunt excepteur aliquip et. Enim est excepteur duis fugiat consectetur labore in laborum culpa anim nisi cupidatat. Culpa do reprehenderit cupidatat Lorem proident deserunt id. Aute ut aliqua tempor ad voluptate Lorem nulla aliquip culpa sit ex pariatur. Elit minim Lorem occaecat esse eu id proident ut adipisicing ad. Velit dolor consectetur nulla do.",
+                "ID": 3
+            }
+        ],
+        "BUTTON": "Teste"
+    }
+}

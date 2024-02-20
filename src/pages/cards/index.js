@@ -8,29 +8,26 @@ import CardWrapper from "components/CardWrapper/CardWrapper";
 import { Button } from "components/Buttons/Buttons";
 
 import { GlobalContext as Context } from "global/context";
+import { I18nContext } from "context/i18n";
 
 
 export default function CardSection() {
   const { state, setState } = useContext(Context);
+  const { i18n } = useContext(I18nContext);
 
   return (
     <CardPageContainer id="cards">
-      <Title>My experience working with web development</Title>
+      <Title>{i18n.XP.TITLE}</Title>
       <CardWrapper>
-        <Card
-          title="Faminas-BH"
-          text="I've learned the fundamentals of web development working as Full Stack using PHP, MySQL and Javascript"
-        />
-        <Card
-          title="Sambatech - 2020/present"
-          text="I work building web applications to our clients and products using React, Next.js and Styled-Components"
-        />
-        <Card
-          title="Reframax Engenharia - 2018/2019"
-          text="I've improved my knowledge in the web development fundamentals working with Vanilla JS and jQuery"
-        />
+        {i18n.XP.LIST && i18n.XP.LIST.map(({ TITLE, TEXT, ID }) => (
+          <Card
+            title={TITLE}
+            text={TEXT}
+            key={ID}
+          />
+        ))}
       </CardWrapper>
-      <Button className="primary" onClick={() => setState({ ...state, activePage: "dropdowns" })}>More</Button>
+      <Button className="primary" onClick={() => setState({ ...state, activePage: "dropdowns" })}>{i18n.XP.BUTTON}</Button>
     </CardPageContainer>
   );
 }

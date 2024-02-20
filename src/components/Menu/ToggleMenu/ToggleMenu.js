@@ -11,6 +11,7 @@ import {
     Shadow,
     SidePanel
 } from "./ToggleMenu.style";
+import { I18nContext } from "context/i18n";
 
 // @todo: make accessible
 // @todo: lock scroll when menu is open
@@ -20,7 +21,9 @@ export default function ToggleMenu() {
     const [isOpen, setIsOpen] = useState(false);
 
     const { state, setState } = useContext(GlobalContext);
-    const { pages } = state;
+
+    const { i18n } = useContext(I18nContext);
+    const { MENU } = i18n;
 
     const handleItemClick = (id) => {
         setState({ ...state, activePage: id });
@@ -37,8 +40,8 @@ export default function ToggleMenu() {
                     <Shadow />
                     <SidePanel>
                         <PanelList>
-                            {pages && pages.map(({ name, id }) => (
-                                <ListItem key={id} onClick={() => handleItemClick(id)}>{name}</ListItem>
+                            {MENU && MENU.map(({ NAME, ID }) => (
+                                <ListItem key={ID} onClick={() => handleItemClick(ID)}>{NAME}</ListItem>
                             ))}
                         </PanelList>
                     </SidePanel>

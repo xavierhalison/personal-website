@@ -8,9 +8,11 @@ import { useContext } from "react";
 import { GlobalContext as Context } from "global/context";
 import { Text, Title } from "components/Text/Text";
 import { Button } from "components/Buttons/Buttons";
+import { I18nContext } from "context/i18n";
 
 function Features() {
   const { state, setState } = useContext(Context);
+  const { i18n } = useContext(I18nContext);
 
   const handleButtonClick = (id) => {
     setState({ ...state, activePage: id });
@@ -18,32 +20,19 @@ function Features() {
 
   return (
     <FeaturePageContainer id="features">
-      <Title>These are some of my skills:</Title>
+      <Title>{i18n.SKILLS.TITLE}</Title>
 
       <Illustration2 src={illUstration2} alt="" />
 
       <FeatureList>
-        <li>
-          <Text>ES6+ Javascript and React</Text>
-        </li>
-        <li>
-          <Text>
-            Building complex layouts with CSS3 and HTML5
-          </Text>
-        </li>
-        <li>
-          <Text>
-            Modern frameworks such as Next.js and Libs such as Styled Components
-          </Text>
-        </li>
-        <li>
-          <Text>
-            Typescript
-          </Text>
-        </li>
+        {i18n.SKILLS.LIST && i18n.SKILLS.LIST.map(({ ID, TEXT }) => (
+          <li key={ID}>
+            <Text>{TEXT}</Text>
+          </li>
+        ))}
       </FeatureList>
 
-      <Button className="primary" onClick={() => handleButtonClick("cards")}>My XP</Button>
+      <Button className="primary" onClick={() => handleButtonClick("cards")}>{i18n.SKILLS.BUTTON}</Button>
 
     </FeaturePageContainer>
   );
